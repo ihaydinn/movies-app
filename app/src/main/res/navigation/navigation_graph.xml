@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ismailhakkiaydin.movies.ui.main.home.HomeFragment"
+        android:label="fragment_popular"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.ismailhakkiaydin.movies.ui.main.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ismailhakkiaydin.movies.ui.main.search.SearchFragment"
+        android:label="fragment_latest"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/topRatedFragment"
+        android:name="com.ismailhakkiaydin.movies.ui.main.toprated.TopRatedFragment"
+        android:label="fragment_top_rated"
+        tools:layout="@layout/fragment_top_rated" />
+</navigation>

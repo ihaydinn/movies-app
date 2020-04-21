@@ -16,6 +16,9 @@ interface ApiService {
     @GET("movie/top_rated")
     fun getTopRatedMovies(): Single<MovieResponse>
 
+    @GET("movie/upcoming")
+    fun getUpComingMovies(): Single<MovieResponse>
+
     @GET("movie/{id}")
     fun getMovieDetails(@Path("id") movieId:Int): Single<MovieDetailResponse>
 
