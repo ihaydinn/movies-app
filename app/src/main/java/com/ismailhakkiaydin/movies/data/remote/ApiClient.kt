@@ -26,6 +26,10 @@ class ApiClient {
         return api.getPopularMovies()
     }
 
+    fun getUpcomingMovies(): Single<MovieResponse>{
+        return api.getUpComingMovies()
+    }
+
     private fun getOkhttpClient():OkHttpClient{
         val client = OkHttpClient.Builder()
         client.addInterceptor(RequestInterceptor())

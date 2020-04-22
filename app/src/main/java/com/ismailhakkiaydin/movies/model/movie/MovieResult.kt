@@ -7,7 +7,7 @@ data class MovieResult(
     var movieId: Int,
 
     @SerializedName("poster_path")
-    var poster_path: String,
+    var poster_path: String? = null,
 
     @SerializedName("overview")
     var overview: String,
@@ -25,7 +25,7 @@ data class MovieResult(
     var title: String,
 
     @SerializedName("backdrop_path")
-    var backdrop_path: String,
+    var backdrop_path: String? = null,
 
     @SerializedName("popularity")
     var popularity: Double,
