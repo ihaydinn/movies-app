@@ -1,6 +1,8 @@
 package com.ismailhakkiaydin.movies.data.remote
 
+import com.ismailhakkiaydin.movies.model.detail.MovieDetailResponse
 import com.ismailhakkiaydin.movies.model.movie.MovieResponse
+import com.ismailhakkiaydin.movies.model.videos.MovieVideoResponse
 import com.ismailhakkiaydin.movies.util.Constant
 import io.reactivex.Single
 import okhttp3.OkHttpClient
@@ -28,6 +30,14 @@ class ApiClient {
 
     fun getUpcomingMovies(): Single<MovieResponse>{
         return api.getUpComingMovies()
+    }
+
+    fun getMovieDetails(movieId:Int): Single<MovieDetailResponse>{
+        return api.getMovieDetails(movieId)
+    }
+
+    fun getMovieTrailers(movieId: Int): Single<MovieVideoResponse>{
+        return api.getMovieVideos(movieId)
     }
 
     private fun getOkhttpClient():OkHttpClient{

@@ -25,7 +25,7 @@ android {
         }
     }
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 
@@ -76,4 +76,6 @@ dependencies {
     implementation "com.android.support:design:$supportVersion"
 
     implementation "androidx.preference:preference:$preferencesVersion"
+
+    implementation 'com.github.florent37:arclayout:1.0.3'
 }

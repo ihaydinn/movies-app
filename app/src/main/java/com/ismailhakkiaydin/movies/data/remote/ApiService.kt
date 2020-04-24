@@ -25,7 +25,4 @@ interface ApiService {
     @GET("movie/{id}/videos")
     fun getMovieVideos(@Path("id") movieId: Int): Single<MovieVideoResponse>
 
-    @GET("movi/{id}/reviews")
-    fun getMovieReviews(@Path("id") movieId: Int): Single<MovieReviewResponse>
-
 }

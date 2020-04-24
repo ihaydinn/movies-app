@@ -1,46 +1,41 @@
 package com.ismailhakkiaydin.movies.ui.main
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.ismailhakkiaydin.movies.R
 import com.ismailhakkiaydin.movies.databinding.ItemMovieBinding
 import com.ismailhakkiaydin.movies.model.movie.MovieResult
+import kotlinx.android.synthetic.main.item_movie.view.*
+import com.ismailhakkiaydin.movies.ui.main.toprated.TopRatedFragmentDirections
 
-class MovieAdapter : ListAdapter<MovieResult, MovieAdapter.ViewHolder>(DIFF_CALLBACK) {
+class MovieAdapter(val movieDetailList: List<MovieResult>, val onItemClick:(MovieResult)->Unit) :
+    RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+    class MovieViewHolder(var view: ItemMovieBinding) : RecyclerView.ViewHolder(view.root) {
 
-    class ViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
-
-        companion object {
-            fun create(inflater: LayoutInflater, parent: ViewGroup): ViewHolder {
-                val itemMovieBinding = ItemMovieBinding.inflate(inflater, parent, false)
-                return ViewHolder(itemMovieBinding)
-            }
-        }
-
-        fun bind(movieResult: MovieResult) {
-            binding.movie = movieResult
-            binding.executePendingBindings()
+        fun bind(model: MovieResult, onItemClick: (MovieResult) -> Unit){
+            itemView.setOnClickListener { onItemClick(model) }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
-        ViewHolder.create(
-            LayoutInflater.from(parent.context), parent
-        )
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.bind(getItem(position))
-
-    companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieResult>() {
-            override fun areItemsTheSame(oldItem: MovieResult, newItem: MovieResult): Boolean =
-                oldItem.movieId == newItem.movieId
-
-            override fun areContentsTheSame(oldItem: MovieResult, newItem: MovieResult): Boolean =
-                oldItem.title == newItem.title
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        val view =
+            DataBindingUtil.inflate<ItemMovieBinding>(inflater, R.layout.item_movie, parent, false)
+        return MovieViewHolder(view)
     }
 
+    override fun getItemCount(): Int {
+        return movieDetailList.size
+    }
+
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+        holder.view.movie = movieDetailList[position]
+        holder.bind(movieDetailList[position],onItemClick)
+    }
 }

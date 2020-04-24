@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.ismailhakkiaydin.movies.ui.main.home.HomeFragment"
         android:label="fragment_popular"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.ismailhakkiaydin.movies.ui.main.favorite.FavoriteFragment"
@@ -24,5 +28,13 @@
         android:id="@+id/topRatedFragment"
         android:name="com.ismailhakkiaydin.movies.ui.main.toprated.TopRatedFragment"
         android:label="fragment_top_rated"
-        tools:layout="@layout/fragment_top_rated" />
+        tools:layout="@layout/fragment_top_rated" >
+        <action
+            android:id="@+id/action_topRatedFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.ismailhakkiaydin.movies.ui.detail.overview.MovieDetailFragment"
+        android:label="MovieDetailFragment" />
 </navigation>
