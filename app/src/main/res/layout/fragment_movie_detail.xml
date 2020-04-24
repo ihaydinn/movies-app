@@ -24,15 +24,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-
             <ImageView
                 android:id="@+id/imgBackgorund"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:background="#E67373"
                 android:imageUrl="@{detail.backdrop_path}"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +43,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -98,25 +95,51 @@
                         android:id="@+id/tvMoovieRate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textSize="26sp"
                         android:text="@{String.valueOf(content.vote_average)}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/tvMovieTitle" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date: "
+                        app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle" />
 
                     <TextView
                         android:id="@+id/tvReleaseDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{content.release_date}"
-                        app:layout_constraintStart_toStartOf="@+id/tvMovieTitle"
-                        app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle" />
+                        app:layout_constraintStart_toEndOf="@+id/textView2"
+                        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vote: "
+                        app:layout_constraintStart_toStartOf="@+id/textView2"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
                     <TextView
                         android:id="@+id/tvVote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{String.valueOf(content.vote_count)}"
-                        app:layout_constraintStart_toStartOf="@+id/tvReleaseDate"
-                        app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate" />
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                    <ImageView
+                        android:id="@+id/imgFavorite"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_favorite_border"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                     <View
                         android:id="@+id/viewDivider"
@@ -138,15 +161,26 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/viewDivider" />
 
-                    <ImageButton
-                        android:id="@+id/imgFavorite"
+                    <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_height="wrap_content"
+                        android:text="Movie Genre"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvOverview" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerviewGenres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -196,9 +230,6 @@
 
 
             </androidx.cardview.widget.CardView>
-
-
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

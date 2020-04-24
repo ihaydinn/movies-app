@@ -2,9 +2,14 @@ package com.ismailhakkiaydin.movies.model.movie
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "movies")
 data class MovieResult(
+
+    @PrimaryKey
     @SerializedName("id")
     var movieId: Int,
 

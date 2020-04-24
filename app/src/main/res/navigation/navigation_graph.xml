@@ -18,7 +18,11 @@
         android:id="@+id/favoriteFragment"
         android:name="com.ismailhakkiaydin.movies.ui.main.favorite.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.ismailhakkiaydin.movies.ui.main.search.SearchFragment"
@@ -35,6 +39,6 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailFragment"
-        android:name="com.ismailhakkiaydin.movies.ui.detail.overview.MovieDetailFragment"
+        android:name="com.ismailhakkiaydin.movies.ui.detail.MovieDetailFragment"
         android:label="MovieDetailFragment" />
 </navigation>

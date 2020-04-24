@@ -1,4 +1,4 @@
-package com.ismailhakkiaydin.movies.ui.detail.overview
+package com.ismailhakkiaydin.movies.ui.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ismailhakkiaydin.movies.R
 import com.ismailhakkiaydin.movies.databinding.ItemTrailerBinding
-import com.ismailhakkiaydin.movies.model.videos.MovieVideoResponse
 import com.ismailhakkiaydin.movies.model.videos.MovieVideoResult
 
 class TrailerAdapter(var trailerList: List<MovieVideoResult>, val trailerOnClick: (MovieVideoResult)->Unit) : RecyclerView.Adapter<TrailerAdapter.TrailerViewHolder>() {
@@ -20,7 +19,9 @@ class TrailerAdapter(var trailerList: List<MovieVideoResult>, val trailerOnClick
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrailerViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = DataBindingUtil.inflate<ItemTrailerBinding>(inflater,R.layout.item_trailer, parent, false)
-        return TrailerViewHolder(view)
+        return TrailerViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int {

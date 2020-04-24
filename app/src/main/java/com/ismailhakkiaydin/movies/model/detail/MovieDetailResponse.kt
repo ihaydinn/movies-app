@@ -23,6 +23,9 @@ data class MovieDetailResponse(
     @SerializedName("title")
     var title: String? = null,
 
+    @SerializedName("genres")
+    var genres: List<MovieGenre>?=null,
+
     @SerializedName("video")
     var video: Boolean,
 
@@ -39,6 +42,7 @@ data class MovieDetailResponse(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
+        parcel.createTypedArrayList(MovieGenre),
         parcel.readByte() != 0.toByte(),
         parcel.readDouble(),
         parcel.readInt()
@@ -52,6 +56,7 @@ data class MovieDetailResponse(
         parcel.writeString(poster_path)
         parcel.writeString(release_date)
         parcel.writeString(title)
+        parcel.writeTypedList(genres)
         parcel.writeByte(if (video) 1 else 0)
         parcel.writeDouble(vote_average)
         parcel.writeInt(vote_count)
