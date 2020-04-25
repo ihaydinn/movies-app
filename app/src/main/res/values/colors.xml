@@ -5,4 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="background">#FF403D3D</color>
     <color name="colorText">#EDEDED</color>
+    <color name="colorSplash">#0d253f</color>
 </resources>
