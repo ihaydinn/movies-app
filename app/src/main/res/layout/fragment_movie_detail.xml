@@ -18,7 +18,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DFDFDF">
+        android:background="#403D3D">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,7 +28,6 @@
                 android:id="@+id/imgBackgorund"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="#E67373"
                 android:imageUrl="@{detail.backdrop_path}"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"

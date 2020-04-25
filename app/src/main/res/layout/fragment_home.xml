@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ui.main.home.HomeFragment">
 
     <ProgressBar
@@ -30,7 +31,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Popular Movies"/>
+            android:text="Popular Movies"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"/>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/pagerPopularMovie"
@@ -42,7 +45,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Upcoming Movies"/>
+            android:text="Upcoming Movies"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"/>
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/pagerUpcomingMovie"

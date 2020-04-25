@@ -1,10 +1,15 @@
 package com.ismailhakkiaydin.movies.ui.main.search
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.view.animation.RotateAnimation
 import android.widget.SearchView
 import androidx.core.os.bundleOf
 
@@ -17,6 +22,7 @@ import com.ismailhakkiaydin.movies.common.BaseFragment
 import com.ismailhakkiaydin.movies.databinding.FragmentSearchBinding
 import com.ismailhakkiaydin.movies.util.gone
 import com.ismailhakkiaydin.movies.util.visible
+import kotlinx.android.synthetic.main.fragment_movie_detail.*
 import kotlinx.android.synthetic.main.fragment_search.*
 
 
@@ -41,6 +47,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
                 if (query != null && query.length > 0){
                     viewModel.getSearchMovies(query!!)
                     dataBinding.imgSearch.gone()
+                    dataBinding.tvSearch.gone()
                     dataBinding.recyclerviewSearch.visible()
                 }
                 return false
@@ -55,6 +62,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
             override fun onClose(): Boolean {
                 dataBinding.recyclerviewSearch.gone()
                 dataBinding.imgSearch.visible()
+                dataBinding.tvSearch.visible()
                 return false
             }
         })

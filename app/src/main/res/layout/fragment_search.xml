@@ -6,6 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         tools:context=".ui.main.search.SearchFragment">
 
 
@@ -16,6 +17,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/background_search_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,18 +38,30 @@
 
         <ImageView
             android:id="@+id/imgSearch"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:src="@drawable/no_movie_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:src="@drawable/ic_up_arrow"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView"/>
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            app:layout_constraintVertical_bias="0.224" />
+
+        <TextView
+            android:id="@+id/tvSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You can write what you want to call above!"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="@+id/imgSearch"
+            app:layout_constraintStart_toStartOf="@+id/imgSearch"
+            app:layout_constraintTop_toBottomOf="@+id/imgSearch" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
