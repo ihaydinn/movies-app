@@ -2,10 +2,12 @@ package com.ismailhakkiaydin.movies.data.remote
 
 import com.ismailhakkiaydin.movies.model.detail.MovieDetailResponse
 import com.ismailhakkiaydin.movies.model.movie.MovieResponse
+import com.ismailhakkiaydin.movies.model.search.MovieSearchResponse
 import com.ismailhakkiaydin.movies.model.videos.MovieVideoResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -19,9 +21,12 @@ interface ApiService {
     fun getUpComingMovies(): Single<MovieResponse>
 
     @GET("movie/{id}")
-    fun getMovieDetails(@Path("id") movieId:Int): Single<MovieDetailResponse>
+    fun getMovieDetails(@Path("id") movieId: Int): Single<MovieDetailResponse>
 
     @GET("movie/{id}/videos")
     fun getMovieVideos(@Path("id") movieId: Int): Single<MovieVideoResponse>
+
+    @GET("search/movie")
+    fun getSearchMovies(@Query("query") search: String): Single<MovieSearchResponse>
 
 }
