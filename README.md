@@ -3,17 +3,17 @@
 <img src="http://ismailhakkiaydin.com/wp-content/uploads/2020/04/ic_launcher.png" align="center">
 
 # Content
-- [About Projects](https://github.com/ihaydinn/weather-app#about-projects)
-  - [Screenshoots](https://github.com/ihaydinn/weather-app#screenshoots)
-  - [Abstract](https://github.com/ihaydinn/weather-app#abstract)
-  - [Project Details](https://github.com/ihaydinn/weather-app#projects-details)
-  - [Library and Tools](https://github.com/ihaydinn/weather-app#library-and-tools)
-  - [How Can I Use](https://github.com/ihaydinn/weather-app#how-can-i-use)
-- [Architecture](https://github.com/ihaydinn/weather-app#architecture)
-- [Design](https://github.com/ihaydinn/weather-app#desing)
-- [Support](https://github.com/ihaydinn/weather-app#support)
-- [Contact](https://github.com/ihaydinn/weather-app#contact)
-- [License](https://github.com/ihaydinn/weather-app#license)
+- [About Projects](https://github.com/ihaydinn/movies-app#about-projects)
+  - [Screenshoots](https://github.com/ihaydinn/movies-app#screenshoots)
+  - [Abstract](https://github.com/ihaydinn/movies-app#abstract)
+  - [Project Details](https://github.com/ihaydinn/movies-app#projects-details)
+  - [Library and Tools](https://github.com/ihaydinn/movies-app#library-and-tools)
+  - [How Can I Use](https://github.com/ihaydinn/movies-app#how-can-i-use)
+- [Architecture](https://github.com/ihaydinn/movies-app#architecture)
+- [Design](https://github.com/ihaydinn/movies-app#desing)
+- [Support](https://github.com/ihaydinn/movies-app#support)
+- [Contact](https://github.com/ihaydinn/movies-app#contact)
+- [License](https://github.com/ihaydinn/movies-app#license)
 
 # About Projects
 ### Screenshots
@@ -49,6 +49,11 @@ you can follow this path and use the API you obtained from [TheMovieDB](https://
 
 # Design
 I tried to make the design as good as I could for me :)
+
+# Support
+If you want to support, I drink your coffee. :blush: :coffee: 
+
+[<img src="http://ismailhakkiaydin.com/wp-content/uploads/2020/04/patreon.png">](https://www.patreon.com/ihaydinn)
 
 # Contact
 - [Blog](https://www.ismailhakkiaydin.com)
